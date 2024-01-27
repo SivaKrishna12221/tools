@@ -1,0 +1,16 @@
+#from <image> using already image from docker
+FROM openjdk:11
+
+#temp folder to run the application
+VOLUME /tmp
+
+#prvide port number to the app
+EXPOSE 4545
+
+#add jar file location to mapping name/alias name
+
+ADD target/DockerSampleProj01-0.0.1-SNAPSHOT.jar DockerSampleProj01-0.0.1-SNAPSHOT.jar
+
+#jar execution command
+ENTRYPOINT ["java","-jar","/DockerSampleProj01/target/DockerSampleProj01-0.0.1-SNAPSHOT"]
+
